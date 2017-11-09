@@ -1,0 +1,47 @@
+CSG {
+    numNodes 5 
+
+    n0 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 0.0 0.0 0.0
+          Radius 1.0
+      }
+    }
+
+    n1 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 1.0 0.0 1.0
+          Radius 1.0
+      }
+    }
+
+    n2 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 0.0 1.0 0.0
+          Radius 1.0
+      }
+    }
+
+    n3 {
+        Type internal
+        Operator union
+        numChildren 2
+        Child n0 n2 
+    }
+
+    n4 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n3 n1
+    }
+}
+
+
+

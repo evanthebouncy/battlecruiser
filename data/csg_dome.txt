@@ -1,0 +1,131 @@
+
+PerspectiveCamera {
+    center 0.5 0.3 4
+    direction 0 0.2 -4 
+    up 0 1 0
+    angle 30
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9 
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0.7 0.7
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0.95 0.95 0.95 }
+    Material { diffuseColor 0.75 0.75 0.75 }
+    Material {
+        diffuseColor 1 1 1 
+        specularColor 1 1 1
+        shininess 20
+    }
+}
+
+Group {
+    numObjects 1
+    CSG {
+        numNodes 10
+        n0 {
+            Type internal
+            Operator union
+            numChildren 2
+            Child n1 n2
+        }
+        n1 {
+            Type leaf
+            MaterialIndex 0
+            Sphere {
+                Center 0.5 0.6 0.5
+                Radius 0.3
+            }
+        }
+        n2 {
+            Type internal
+            Operator union
+            numChildren 5
+            Child n3 n4 n5 n6 n7
+        }
+        n3 {
+            Type leaf
+            MaterialIndex 1
+            Cuboid {
+                pmin 0.18 0.04 0.89
+                size 0.1 0.52 0.1
+            }
+        }
+        n4 {
+            Type leaf
+            MaterialIndex 1
+            Transform {
+                Translate 0.18 0 0
+                Cuboid {
+                    pmin 0.18 0.04 0.89
+                    size 0.1 0.52 0.1
+                }
+            }
+        }
+        n5 {
+            Type leaf
+            MaterialIndex 1
+            Transform {
+                Translate 0.36 0 0
+                Cuboid {
+                    pmin 0.18 0.04 0.89
+                    size 0.1 0.52 0.1
+                }
+            }
+        }
+        n6 {
+            Type leaf
+            MaterialIndex 1
+            Transform {
+                Translate 0.54 0 0
+                Cuboid {
+                    pmin 0.18 0.04 0.89
+                    size 0.1 0.52 0.1
+                }
+            }
+        }
+        n7 {
+            Type internal
+            Operator subtract
+            numChildren 2
+            Child n8 n9
+        }
+        n8 {
+            Type leaf
+            MaterialIndex 2
+            Cuboid {
+                pmin 0 0 0
+                size 1 0.6 1
+            }
+        }
+        n9 {
+            Type leaf
+            MaterialIndex 2
+            Cuboid {
+                pmin 0.05 0.05 0.85
+                size 0.9 0.5 1
+            }
+        }
+    }
+}

@@ -1,0 +1,403 @@
+
+PerspectiveCamera {
+    center 0.6 2.4 3
+    direction -0.2 -0.6 -1
+    up 0 1 0
+    angle 45
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0 0
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0 0.5 0 }
+    Material {
+        diffuseColor 0.70 0.58 0.37
+        specularColor 0.92 0.81 0.48
+        shininess 8
+    }
+    Material {
+        diffuseColor 0.75 0.63 0.42
+        specularColor 0.97 0.86 0.53
+        shininess 4
+    }
+}
+
+Group {
+  numObjects 1
+  CSG {
+    numNodes 33
+    n31 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 1 0 0
+        Length 1
+        Circle {
+          Center -1 0.7586 0.4
+          Norma 1 0 0
+          Radius 0.05
+        }
+      }
+    }
+    n30 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 1 0 0
+        Length 0.15
+        Circle {
+          Center -0.9 0.7586 0.4
+          Normal 1 0 0
+          Radius 0.1
+        }
+      }
+    }
+    n29 {
+      Type internal
+      Operator subtract
+      numChildren 2
+      Child n32 n31
+    }
+    n32 {
+      Type internal
+      Operator union
+      numChildren 2
+      Child n28 n30
+    }
+    n28 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 1 0 0
+        Length 0.15
+        Polygon {
+          numPts 8
+          -0.9 0.1 0.5
+          -0.9 0.1 0.2
+          -0.9 0.5 0.2
+          -0.9 0.1 -0.2
+          -0.9 0.1 -0.5
+          -0.9 0.8293 0.3293
+          -0.9 0.7586 0.4
+          -0.9 0.7586 0.5
+        }
+      }
+    }
+    n27 {
+      Type leaf
+      MaterialIndex 3
+      Cuboid {
+        pmin -0.05 0.15 -0.05
+        size 0.6 0.6 0.1
+      }
+    }
+    n26 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 1 0 0
+        Length 0.5
+        Circle {
+          Center 0 0.15 0
+          Normal 1 0 0
+          Radius 0.05
+        }
+      }
+    }
+    n24 {
+      Type internal
+      Operator union
+      numChildren 5
+      Child n23 n21 n25 n26 n27
+    }
+    n25 {
+      Type leaf
+      MaterialIndex 2
+      Extrusion {
+        Dir 0 0 -1
+        Length 1
+        Circle {
+          Center 0.25 0.35 -0.2
+          Normal 0 0 -1
+          Radius 0.15
+        }
+      }
+    }
+    n23 {
+      Type leaf
+      MaterialIndex 2
+      Extrusion {
+        Dir 0 0 1
+        Length 1
+        Circle {
+          Center 0.25 0.35 -0.1
+          Normal 0 0 1
+          Radius 0.15
+        }
+      }
+    }
+    n22 {
+      Type internal
+      Operator subtract
+      numChildren 2
+      Child n20 n24
+    }
+    n21 {
+      Type leaf
+      MaterialIndex 2
+      Extrusion {
+        Dir 0 0 -1
+        Length 1
+        Circle {
+          Center 0.25 0.35 0.1
+          Normal 0 0 -1
+          Radius 0.05
+        }
+      }
+    }
+    n20 {
+      Type leaf
+      MaterialIndex 2
+      Cuboid {
+        pmin 0.05 0.05 -0.3
+        size 0.4 0.3 0.3
+      }
+    }
+    n19 {
+      Type internal
+      Operator subtract
+      numChildren 2
+      Child n9 n18
+    }
+    n18 {
+      Type internal
+      Operator union
+      numChildren 8
+      Child n10 n11 n12 n13 n14 n15 n16 n17
+    }
+    n17 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1
+        Circle {
+          Center -0.2 0.085 0.3
+          Normal 0 1 0
+          Radius 0.05
+        }
+      }
+    }
+    n16 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1
+        Circle {
+          Center 0.2 0.085 0.3
+          Normal 0 1 0
+          Radius 0.05
+        }
+      }
+    }
+    n15 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1
+        Circle {
+          Center -0.2 0.085 0.5
+          Normal 0 1 0
+          Radius 0.05
+        }
+      }
+    }
+    n14 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1
+        Circle {
+          Center 0.2 0.085 0.5
+          Normal 0 1 0
+          Radius 0.05
+        }
+      }
+    }
+    n13 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1 
+        Circle {
+          Center -0.2 -0.1 0.3
+          Normal 0 1 0
+          Radius 0.025
+        }
+      }
+    }
+    n12 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1 
+        Circle {
+          Center 0.2 -0.1 0.3
+          Normal 0 1 0
+          Radius 0.025
+        }
+      }
+    }
+    n11 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1 
+        Circle {
+          Center -0.2 -0.1 0.5
+          Normal 0 1 0
+          Radius 0.025
+        }
+      }
+    }
+    n10 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 1 
+        Circle {
+          Center 0.2 -0.1 0.5
+          Normal 0 1 0
+          Radius 0.025
+        }
+      }
+    }
+    n9 {
+      Type internal
+      Operator union
+      numChildren 11
+      Child n0 n1 n2 n3 n4 n5 n6 n7 n8 n22 n29
+    }
+    n8 {
+      Type leaf
+      MaterialIndex 3
+      Sphere {
+        Center -1 0.05 -0.6
+        Radius 0.05
+      }
+    }
+    n7 {
+      Type leaf
+      MaterialIndex 3
+      Sphere {
+        Center 1 0.05 -0.6
+        Radius 0.05
+      }
+    }
+    n6 {
+      Type leaf
+      MaterialIndex 3
+      Sphere {
+        Center -1 0.05 0.6
+        Radius 0.05
+      }
+    }
+    n5 {
+      Type leaf
+      MaterialIndex 3
+      Sphere {
+        Center 1 0.05 0.6
+        Radius 0.05
+      }
+    }
+    n4 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 0 -1
+        Length 1.2
+        Circle {
+          Center -1 0.05 0.6
+          Normal 0 0 -1
+          Radius 0.05
+        }
+      }
+    }
+    n3 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 0 -1
+        Length 1.2
+        Circle {
+          Center 1 0.05 0.6
+          Normal 0 0 -1
+          Radius 0.05
+        }
+      }
+    }
+    n2 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 1 0 0
+        Length 2
+        Circle {
+          Center -1 0.05 -0.6
+          Normal 1 0 0
+          Radius 0.05
+        }
+      }
+    }
+    n1 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 1 0 0
+        Length 2
+        Circle {
+          Center -1 0.05 0.6
+          Normal 1 0 0
+          Radius 0.05
+        }
+      }
+    }
+    n0 {
+      Type leaf
+      MaterialIndex 3
+      Cuboid {
+        pmin -1.0 0 -0.6
+        size 2.0 0.1 1.2
+      }
+    }
+  }
+}

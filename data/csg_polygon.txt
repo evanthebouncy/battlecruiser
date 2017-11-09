@@ -1,0 +1,63 @@
+
+PerspectiveCamera {
+    center 1 1 1 
+    direction -1 -1 -1
+    up 0 1 0
+    angle 60
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9 
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0 0
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0 0.5 0 }
+    Material { diffuseColor 0 0 0.75 }
+    Material {
+        diffuseColor 1 1 1 
+        specularColor 1 1 1
+        shininess 20
+    }
+}
+
+Group {
+  numObjects 1
+  CSG {
+    numNodes 1
+    n0 {
+      Type leaf
+      MaterialIndex 0
+      Extrusion {
+        Dir 0 0 -1
+        Length 0.6
+        Polygon {
+          numPts 4
+          0.6 0 0
+          0.5 0.2 0
+          -0.5 0.2 0
+          -0.6 0 0
+        }
+      }
+    }
+  }
+}

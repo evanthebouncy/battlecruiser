@@ -1,0 +1,144 @@
+
+PerspectiveCamera {
+    center 0.8 1.6 1.2
+    direction 0 -0.6 -1
+    up 0 1 0
+    angle 75
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0 0
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0 0.5 0 }
+    Material {
+        diffuseColor 0.70 0.58 0.37
+        specularColor 0.92 0.81 0.48
+        shininess 8
+    }
+    Material {
+        diffuseColor 0.75 0.63 0.42
+        specularColor 0.97 0.86 0.53
+        shininess 4
+    }
+}
+
+Group {
+  numObjects 1
+  CSG {
+    numNodes 7
+    n6 {
+      Type internal
+      Operator subtract
+      numChildren 2
+      Child n5 n4
+    }
+    n5 {
+      Type internal
+      Operator union
+      numChildren 2
+      Child n2 n3
+    }
+    n4 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 0 -1
+        Length 0.4
+        Circle {
+          Center 0.25 0.4 -0.2
+          Normal 0 0 -1
+          Radius 0.075
+        }
+      }
+    }
+    n3 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 0 -1
+        Length 0.1
+        Circle {
+          Center 0.25 0.4 -0.3
+          Normal 0 0 1
+          Radius 0.2
+        }
+      }
+    }
+    n2 {
+      Type internal
+      Operator subtract
+      numChildren 2
+      Child n0 n1
+    }
+    n1 {
+      Type leaf
+      MaterialIndex 2
+      Extrusion {
+        Dir 0 0 1
+        Length 1
+        Polygon {
+          numPts 6
+          0.1 0.1 -0.35
+          1.0 0.1 -0.35
+          1.1 0.2 -0.35
+          1.1 0.6 -0.35
+          1.0 0.7 -0.35
+          0.1 0.7 -0.35
+        }
+      }
+    }
+    n0 {
+      Type leaf
+      MaterialIndex 3
+      Extrusion {
+        Dir 0 1 0
+        Length 0.8
+        Polygon {
+          numPts 20
+          1.6 0 0
+          1.6 0 -1.2
+          1.4 0 -1.2
+          1.4 0 -1.0
+          1.2 0 -0.9
+          0 0 -0.9
+          0 0 -0.7
+          0.4 0 -0.7
+          0.5 0 -0.8
+          1.3 0 -0.8
+          1.4 0 -0.7
+          1.4 0 -0.5
+          1.3 0 -0.4
+          0.5 0 -0.4
+          0.4 0 -0.5
+          0 0 -0.5
+          0 0 -0.3
+          1.2 0 -0.3
+          1.4 0 -0.2
+          1.4 0 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+
+PerspectiveCamera {
+    center 0 1.4 2 
+    direction 0 -0.4 -1
+    up 0 1 0
+    angle 90
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9 
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0 0
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0 0.5 0 }
+    Material { diffuseColor 0 0 0.75 }
+    Material {
+        diffuseColor 1 1 1 
+        specularColor 1 1 1
+        shininess 20
+    }
+}
+
+Group {
+    numObjects 1
+    CSG {
+        numNodes 7
+        n6 {
+            Type internal
+            Operator subtract
+            numChildren 2
+            Child n4 n5
+        }
+        n5 {
+            Type leaf
+            MaterialIndex 1
+            Extrusion {
+                Dir 0 1 0
+                Length 0.8
+                Circle {
+                    Center 0 0.1 0
+                    Normal 0 1 0
+                    Radius 0.3
+                }
+            }
+        }
+        n4 {
+            Type internal
+            Operator union
+            numChildren 2
+            Child n3 n2
+        }
+        n3 {
+            Type leaf
+            MaterialIndex 1
+            Extrusion {
+                Dir 0 1 0
+                Length 0.85
+                Circle {
+                    Center 0 0 0
+                    Normal 0 1 0
+                    Radius 0.4
+                }
+            }
+        }
+        n2 {
+            Type internal
+            Operator subtract
+            numChildren 2
+            Child n0 n1
+        }
+        n0 {
+            Type leaf
+            MaterialIndex 0
+            Extrusion {
+                Dir 0 0 -1
+                Length 0.2
+                Circle {
+                    Center 0.5 0.5 0
+                    Normal 0 0 -1
+                    Radius 0.3
+                }
+            }
+        }
+        n1 {
+            Type leaf
+            MaterialIndex 0
+            Extrusion {
+                Dir 0 0 -1
+                Length 0.4
+                Circle {
+                    Center 0.5 0.5 0.1
+                    Normal 0 0 -1
+                    Radius 0.25
+                }
+            }
+        }
+    }
+}

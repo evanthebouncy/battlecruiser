@@ -1,0 +1,39 @@
+CSG {
+    numNodes 5
+    node0 {
+        Type internal
+        Operator union
+        numChildren 2
+        Child node1 node3
+    }
+    node1 {
+        Type leaf
+        MaterialIndex 0
+        Sphere {
+            Center 0 0 0
+            Radius 1
+        }
+    }
+    node2 {
+        Type leaf
+        MaterialIndex 1
+        Sphere {
+            Center 1 0 1
+            Radius 1
+        }
+    }
+    node3 {
+        Type leaf
+        MaterialIndex 2
+        Sphere {
+            Center 0 1 0
+            Radius 1
+        }
+    }
+    node4 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child node0 node2
+    }
+}

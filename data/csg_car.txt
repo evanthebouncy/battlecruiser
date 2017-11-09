@@ -1,0 +1,140 @@
+
+PerspectiveCamera {
+    center 1 1 1 
+    direction -1 -1 -1
+    up 0 1 0
+    angle 60
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9 
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0 0
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0 0.5 0 }
+    Material { diffuseColor 0 0 0.75 }
+    Material {
+        diffuseColor 1 1 1 
+        specularColor 1 1 1
+        shininess 20
+    }
+}
+
+Group {
+  numObjects 1
+  CSG {
+    numNodes 8
+    n7 {
+      Type internal
+      Operator union
+      numChildren 5
+      Child n2 n3 n4 n5 n6
+    }
+    n6 {
+      Type leaf
+      MaterialIndex 1
+      Transform {
+        Translate -0.3 0 -0.3
+        Extrusion {
+          Dir 0 0 -1
+          Length 0.05
+          Circle {
+            Center 0 0 0.025
+            Normal 0 0 -1
+            Radius 0.15
+          }
+        }
+      }
+    }
+    n5 {
+      Type leaf
+      MaterialIndex 1
+      Transform {
+        Translate 0.3 0 -0.3
+        Extrusion {
+          Dir 0 0 -1
+          Length 0.05
+          Circle {
+            Center 0 0 0.025
+            Normal 0 0 -1
+            Radius 0.15
+          }
+        }
+      }
+    }
+    n4 {
+      Type leaf
+      MaterialIndex 1
+      Transform {
+        Translate -0.3 0 0.3
+        Extrusion {
+          Dir 0 0 -1
+          Length 0.05
+          Circle {
+            Center 0 0 0.025
+            Normal 0 0 -1
+            Radius 0.15
+          }
+        }
+      }
+    }
+    n3 {
+      Type leaf
+      MaterialIndex 1
+      Transform {
+        Translate 0.3 0 0.3
+        Extrusion {
+          Dir 0 0 -1
+          Length 0.05
+          Circle {
+            Center 0 0 0.025
+            Normal 0 0 -1
+            Radius 0.15
+          }
+        }
+      }
+    }
+    n2 {
+      Type internal
+      Operator union
+      numChildren 2
+      Child n0 n1
+    }
+    n1 {
+      Type leaf
+      MaterialIndex 0
+      Cuboid {
+        pmin -0.3 0.25 -0.25
+        size 0.6 0.3 0.5
+      }
+    }
+    n0 {
+      Type leaf
+      MaterialIndex 0
+      Cuboid {
+        pmin -0.6 0 -0.3
+        size 1.2 0.3 0.6
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+CSG {
+  numNodes 1
+  n0 {
+    Type leaf
+    MaterialIndex 0
+    Sphere {
+      Center 0 0 0
+      Radius 1
+    }
+  }
+}
