@@ -1,0 +1,161 @@
+
+PerspectiveCamera {
+    center 6 6 6
+    direction -1 -1 -1
+    up 0 1 0
+    angle 90
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0 0
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0 0.5 0 }
+    Material {
+        diffuseColor 0.70 0.58 0.37
+        specularColor 0.92 0.81 0.48
+        shininess 8
+    }
+    Material {
+        diffuseColor 0.75 0.63 0.42
+        specularColor 0.97 0.86 0.53
+        shininess 4
+    }
+}
+
+Group {
+  numObjects 1
+  
+CSG {
+    numNodes 13 
+
+    n0 {
+        Type internal
+        Operator union
+        numChildren 2
+        Child n1 n6 
+    }
+
+    n1 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n2 n3
+    }
+
+    n2 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 1.14900856165 1.24031130613 1.9412586869
+          Radius 1.53364361311
+      }
+    }
+
+    n3 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n4 n5
+    }
+
+    n4 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center -1.7719610846 0.567077103155 0.470206373124
+          Radius 1.80084917147
+      }
+    }
+
+    n5 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 0.726255298755 -0.763166999922 1.79002841021
+          Radius 1.61293887143
+      }
+    }
+
+    n6 {
+        Type internal
+        Operator union
+        numChildren 2
+        Child n7 n10 
+    }
+
+    n7 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n8 n9
+    }
+
+    n8 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 0.502055887921 0.0886742034605 -1.92714965201
+          Radius 1.1825578227
+      }
+    }
+
+    n9 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center -0.344280166808 -1.30561509106 1.2235115448
+          Radius 1.55143093482
+      }
+    }
+
+    n10 {
+        Type internal
+        Operator union
+        numChildren 2
+        Child n11 n12 
+    }
+
+    n11 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center -1.07065898133 -0.965370739895 0.911258766199
+          Radius 1.88516771006
+      }
+    }
+
+    n12 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center -1.42525364103 -0.276630433974 -1.76306502761
+          Radius 1.78854351508
+      }
+    }
+}
+
+
+}
+

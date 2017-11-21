@@ -1,0 +1,177 @@
+
+PerspectiveCamera {
+    center 5 5 5
+    direction -1 -1 -1
+    up 0 1 0
+    angle 90
+}
+
+Lights {
+    numLights 2
+    PointLight {
+        position 5 5 0
+        color 0.9 0.9 0.9
+        falloff 0.025
+    }
+    DirectionalLight {
+        direction 1 0 -1
+        color 0.9 0.9 0.9
+    }
+}
+
+Background {
+    color 0 0 0 
+    ambientLight 0.1 0.1 0.1 
+}
+
+Materials {
+    numMaterials 4
+    Material {
+        diffuseColor 0.7 0 0
+        specularColor 0.6 0.6 0.6
+        shininess 20
+    }
+    Material { diffuseColor 0 0.5 0 }
+    Material {
+        diffuseColor 0.70 0.58 0.37
+        specularColor 0.92 0.81 0.48
+        shininess 8
+    }
+    Material {
+        diffuseColor 0.75 0.63 0.42
+        specularColor 0.97 0.86 0.53
+        shininess 4
+    }
+}
+
+Group {
+  numObjects 1
+  
+CSG {
+    numNodes 15 
+
+    n0 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n1 n14
+    }
+
+    n1 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n2 n9
+    }
+
+    n2 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n3 n6
+    }
+
+    n3 {
+        Type internal
+        Operator subtract
+        numChildren 2
+        Child n4 n5
+    }
+
+    n4 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center -1.15475572592 -0.583770447598 -0.519070119383
+          Radius 1.61979429376
+      }
+    }
+
+    n5 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center -0.886630179557 1.16099107482 1.32080021371
+          Radius 1.88939406127
+      }
+    }
+
+    n6 {
+        Type internal
+        Operator intersect
+        numChildren 2
+        Child n7 n8 
+    }
+
+    n7 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 0.300498537233 0.138777545272 1.04965916705
+          Radius 1.09049955423
+      }
+    }
+
+    n8 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 1.96014955781 -0.802878515218 1.46636271622
+          Radius 1.13822700072
+      }
+    }
+
+    n9 {
+        Type internal
+        Operator intersect
+        numChildren 2
+        Child n10 n11 
+    }
+
+    n10 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center -0.911786365617 -0.437451725198 -0.121961916994
+          Radius 1.56065326212
+      }
+    }
+
+    n11 {
+        Type internal
+        Operator intersect
+        numChildren 2
+        Child n12 n13 
+    }
+
+    n12 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 1.28250704877 -1.58215891871 -0.649741156212
+          Radius 1.98256282298
+      }
+    }
+
+    n13 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 1.54306536045 0.826753500663 -1.84480058165
+          Radius 1.7339897427
+      }
+    }
+
+    n14 {
+      Type leaf
+      MaterialIndex 0
+      Sphere {
+          Center 0.316167152603 1.25714346596 0.110345044553
+          Radius 1.40570985101
+      }
+    }
+}
+
+
+}
+
